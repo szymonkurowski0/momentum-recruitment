@@ -6,7 +6,8 @@ services:
     ports:
       - "8000:80"
     depends_on:
-      - db
+      db:
+        condition: service_started
     volumes:
       - ./:/src:ro
     environment:
